@@ -32,7 +32,7 @@ def get_year_start_end_date(year):
     return start_date, end_date
 
 
-def average_annual_exchange_rate(year, base_currency, converted_currency):
+def get_average_annual_exchange_rate(year, base_currency, converted_currency):
     """
     Gets the average annual exchange rate for a given year.
 
@@ -74,6 +74,32 @@ def average_annual_exchange_rate(year, base_currency, converted_currency):
     print(end_time-start_time)
 
     return rate_history_average
+
+
+def convert_currency_annual_average(value, year, base_currency, converted_currency):
+    """
+    Gets the average annual exchange rate for a given year.
+
+    Parameters
+    ----------
+    value: float
+        Value to be converted from base currency to desired currency.
+    year: int
+        The year of interest.
+    base_currency: str
+        String indicating the base currency.
+    converted_currency: str
+        String indicating the currency which to convert to.
+
+    Returns
+    -------
+    float
+        Converted value in desired currency.
+    """
+    average_exchange_rate = get_average_annual_exchange_rate(year, base_currency, converted_currency)
+    converted_value = average_exchange_rate * value
+
+    return converted_value
 
 
 # # Alternative method using forex_python library - way slower however

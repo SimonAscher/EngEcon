@@ -38,6 +38,8 @@ def CEPCI_scale(base_year, design_year, value):
     """
     Converts a value from a base year to a design year using the Chemical Engineering Plant Cost Index (CEPCI).
 
+    Note: Currently, the most recent value is for 2020 - hence design years post 2020 revert to the 2020 CEPCI value.
+
     Parameters
     ----------
     base_year: int

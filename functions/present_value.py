@@ -1,4 +1,4 @@
-def get_present_value(value, value_type, interest_rate=None, discount_period=None):
+def present_value(value, value_type, interest_rate=None, discount_period=None):
     """
     Convert future value or annual value to present value.
 
